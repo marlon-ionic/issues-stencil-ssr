@@ -1,0 +1,29 @@
+
+# .gitignore
+
+# Ignore node_modules in all directories
+**/node_modules
+# Ignore output of TypeScript compiler
+**/dist
+# Ignore .env files
+**/.env
+
+*~
+*.sw[mnpcod]
+*.log
+*.lock
+*.tmp
+*.tmp.*
+log.txt
+*.sublime-project
+*.sublime-workspace
+
+.idea/
+.vscode/
+.sass-cache/
+.versions/
+$RECYCLE.BIN/
+
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate

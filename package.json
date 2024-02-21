@@ -1,0 +1,11 @@
+{
+  "name": "issues-stencil-ssr",
+  "version": "0.0.1",
+  "description": "A simple example of some issues when using Stencil with SSR apps",
+  "scripts": {
+    "build": "pnpm --filter \"./packages/**\" run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
