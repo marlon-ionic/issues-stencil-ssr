@@ -1,0 +1,29 @@
+:host {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+
+button {
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  outline: none;
+  background: var(--background, var(--color-primary));
+  color: var(--color, var(--color-white));
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.button-inner {
+  display: flex;
+  position: relative;
+
+  flex-flow: row nowrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
