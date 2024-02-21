@@ -1,6 +1,6 @@
 
 import dynamic from "next/dynamic";
-import { renderToString } from "core/hydrate";
+import { renderToString } from "../../../packages/core/hydrate";
 
 export default async function Home() {
   const { html } = await renderToString(
