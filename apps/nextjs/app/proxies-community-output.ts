@@ -1,8 +1,9 @@
+'use client';
 import type { EventName } from '@lit/react';
 import { createComponent as createComponentWrapper, Options } from '@lit/react';
-import { defineCustomElement as defineMyButton, MyButton as MyButtonElement } from "core/dist/components/my-button.js";
-import { defineCustomElement as defineMyComponent, MyComponent as MyComponentElement } from "core/dist/components/my-component.js";
-import { defineCustomElement as defineMyNameBadge, MyNameBadge as MyNameBadgeElement } from "core/dist/components/my-name-badge.js";
+import { defineCustomElement as defineMyButton, MyButton as MyButtonElement } from "core/components/my-button.js";
+import { defineCustomElement as defineMyComponent, MyComponent as MyComponentElement } from "core/components/my-component.js";
+import { defineCustomElement as defineMyNameBadge, MyNameBadge as MyNameBadgeElement } from "core/components/my-name-badge.js";
 import React from 'react';
 
 const createComponent = <T extends HTMLElement, E extends Record<string, EventName | string>>({ defineCustomElement, ...options }: Options<T, E> & { defineCustomElement: () => void }) => {
@@ -41,3 +42,5 @@ export const MyNameBadge = createComponent<MyNameBadgeElement, MyNameBadgeEvents
     events: {} as MyNameBadgeEvents,
     defineCustomElement: defineMyNameBadge
 });
+
+export default MyComponent;
