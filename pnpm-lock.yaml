@@ -84,6 +84,9 @@ importers:
 
   apps/remix:
     dependencies:
+      '@lit/react':
+        specifier: ^1.0.3
+        version: 1.0.3(@types/react@18.2.57)
       '@remix-run/css-bundle':
         specifier: ^2.7.2
         version: 2.7.2

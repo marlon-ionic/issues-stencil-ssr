@@ -22,8 +22,6 @@ export namespace Components {
          */
         "middle": string;
     }
-    interface MyNameBadge {
-    }
 }
 declare global {
     interface HTMLMyButtonElement extends Components.MyButton, HTMLStencilElement {
@@ -38,16 +36,9 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
-    interface HTMLMyNameBadgeElement extends Components.MyNameBadge, HTMLStencilElement {
-    }
-    var HTMLMyNameBadgeElement: {
-        prototype: HTMLMyNameBadgeElement;
-        new (): HTMLMyNameBadgeElement;
-    };
     interface HTMLElementTagNameMap {
         "my-button": HTMLMyButtonElement;
         "my-component": HTMLMyComponentElement;
-        "my-name-badge": HTMLMyNameBadgeElement;
     }
 }
 declare namespace LocalJSX {
@@ -67,12 +58,9 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
-    interface MyNameBadge {
-    }
     interface IntrinsicElements {
         "my-button": MyButton;
         "my-component": MyComponent;
-        "my-name-badge": MyNameBadge;
     }
 }
 export { LocalJSX as JSX };
@@ -81,7 +69,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-button": LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "my-name-badge": LocalJSX.MyNameBadge & JSXBase.HTMLAttributes<HTMLMyNameBadgeElement>;
         }
     }
 }

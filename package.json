@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "A simple example of some issues when using Stencil with SSR apps",
   "scripts": {
-    "build": "pnpm --filter \"./packages/**\" run build"
+    "build": "pnpm --filter \"./packages/**\" run build",
+    "start:express": "pnpm --filter \"./apps/express\" run start",
+    "start:nextjs": "pnpm --filter \"./apps/nextjs\" run dev",
+    "start:remix": "pnpm --filter \"./apps/remix\" run dev"
   },
   "keywords": [],
   "author": "",

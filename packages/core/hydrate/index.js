@@ -7599,7 +7599,7 @@ function format(first, middle, last) {
     return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
 }
 
-const myComponentCss = "/*!@:host*/.sc-my-component-h{display:block}";
+const myComponentCss = "/*!@:host*/.sc-my-component-h{display:block}/*!@.my-name*/.my-name.sc-my-component{color:darkblue;font-weight:bold}";
 var MyComponentStyle0 = myComponentCss;
 
 class MyComponent {
@@ -7613,7 +7613,7 @@ class MyComponent {
         return format(this.first, this.middle, this.last);
     }
     render() {
-        return hAsync("div", { key: '1748b6dc629a1e75297f343c28b568255f8cc387' }, "Hello, World! I'm ", this.getText());
+        return hAsync("div", { key: '1748b6dc629a1e75297f343c28b568255f8cc387' }, "Hello, World! I'm ", hAsync("span", { key: '721a872218d85fabdf0ae8603a5e89dbc50846d7', class: 'my-name' }, this.getText()));
     }
     static get style() { return MyComponentStyle0; }
     static get cmpMeta() { return {
@@ -7630,31 +7630,9 @@ class MyComponent {
     }; }
 }
 
-const myNameBadgeCss = "/*!@:host*/.sc-my-name-badge-h{display:block}";
-var MyNameBadgeStyle0 = myNameBadgeCss;
-
-class MyNameBadge {
-    constructor(hostRef) {
-        registerInstance(this, hostRef);
-    }
-    render() {
-        return (hAsync(Host, { key: 'b7b633749c2eaf8b84bf971151936409b9e386b5' }, hAsync("slot", { key: '5d0dd4a8bcd7ef36e6eef8aebb45edd7693c52e9' })));
-    }
-    static get style() { return MyNameBadgeStyle0; }
-    static get cmpMeta() { return {
-        "$flags$": 9,
-        "$tagName$": "my-name-badge",
-        "$members$": undefined,
-        "$listeners$": undefined,
-        "$lazyBundleId$": "-",
-        "$attrsToReflect$": []
-    }; }
-}
-
 registerComponents([
   MyButton,
   MyComponent,
-  MyNameBadge,
 ]);
 
 exports.hydrateApp = hydrateApp;

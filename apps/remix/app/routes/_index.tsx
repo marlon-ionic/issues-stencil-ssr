@@ -1,4 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
+import { renderToString } from "../../../../packages/core/hydrate";
+import { lazy } from "react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -7,9 +9,21 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function Index() {
+export default async function Index() {
+
+  const { html } = await renderToString(
+    '<my-component first="John" last="Doe"></my-component>'
+  );
+
+  const updatedHtml = html
+    .replace(/data-stencil-build="[^"]*"/, "")
+    .replace(/class="[^"]*"/, "");
+
+  const MyComponent = lazy(() => import("../proxies-community-output"));
+
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
+      <MyComponent first="John" last="Doe" />
       <h1>Welcome to Remix</h1>
       <ul>
         <li>
