@@ -32,16 +32,18 @@ pnpm start:remix
 
 ## Notes
 
-The `proxiesFile` from the React Output target is export directly into the `apps/nextjs/app` directory for the sake of simplicity.
-
-There were manual edits required to this output file to make it work with Next.js. The changes are commented in the file, and are as follows:
+This file is part of the repo, but if you make any changes to the Stencil repository, you'll need to uncomment the outputTarget code from `packages/core/stencil.config.ts`, and then manually edit `apps/nextjs/app/proxies-official-output.ts`:
 
 ```typescript
+// Add 'use client' to the beginning of the file
 'use client';
 ...
 
+// Add 'export default MyComponent' to the end of the file
 export default MyComponent;
 ```
+
+Also note: For now - you need to create a seperate ts file for each component that you want to render in Next.js. And each of those files need to have both `use client` and `export default {ComponentName};`
 
 ### ExpressJS
 
