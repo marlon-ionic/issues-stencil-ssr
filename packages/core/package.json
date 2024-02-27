@@ -19,6 +19,9 @@
     "loader/",
     "hydrate/"
   ],
+  "publishConfig": {
+    "directory": "dist"
+  },
   "scripts": {
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
