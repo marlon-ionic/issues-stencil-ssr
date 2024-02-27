@@ -7,7 +7,6 @@
 **/dist
 # Ignore .env files
 **/.env
-apps/**/bin
 *~
 *.sw[mnpcod]
 *.log
